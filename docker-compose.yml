@@ -1,0 +1,38 @@
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - geodiscover_redis:/data
+
+  geodiscover:
+    build: ./backend
+    environment:
+      ENGINE_DATABASE_URL: sqlite:////app/data/discovery_engine.db
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET: ${JWT_SECRET}
+      DEMO_ADMIN_EMAIL: ${DEMO_ADMIN_EMAIL:-admin@jsanconsulting.com}
+      DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8000}
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY:-}
+      AWS_REGION: ${AWS_REGION:-ap-southeast-1}
+      AWS_LOCATION_API_KEY: ${AWS_LOCATION_API_KEY:-}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+      GRAB_INTENDED_USE: ${GRAB_INTENDED_USE:-Storage}
+      GOOGLE_MAX_SPEND_PER_RUN_USD: ${GOOGLE_MAX_SPEND_PER_RUN_USD:-5.0}
+      GRAB_MAX_SPEND_PER_RUN_USD: ${GRAB_MAX_SPEND_PER_RUN_USD:-5.0}
+      RATE_GOOGLE_NEARBY_PER_1K: ${RATE_GOOGLE_NEARBY_PER_1K:-32.0}
+      RATE_GOOGLE_TEXT_PER_1K: ${RATE_GOOGLE_TEXT_PER_1K:-32.0}
+      RATE_GOOGLE_DETAILS_PER_1K: ${RATE_GOOGLE_DETAILS_PER_1K:-20.0}
+      RATE_GRAB_SEARCH_TEXT_PER_1K: ${RATE_GRAB_SEARCH_TEXT_PER_1K:--1.0}
+    volumes:
+      - geodiscover_data:/app/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+volumes:
+  geodiscover_data:
+  geodiscover_redis:

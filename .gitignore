@@ -1,0 +1,17 @@
+.env
+backend/.env
+*.db
+*.sqlite
+*.sqlite3
+# The compressed discovery snapshot must ship; release.py loads it on first boot.
+# (*.gz is not ignored by the rules above, but keep this explicit for clarity.)
+!backend/discovery_engine_seed.db.gz
+__pycache__/
+.pytest_cache/
+.venv/
+evidence_storage/
+*.pyc
+*.log
+venv/
+*.xlsx.lock
+~$*.xlsx

@@ -1,0 +1,4 @@
+source_record_id,business_name,category,full_address,city,province,latitude,longitude,phone,whatsapp,website,booking_url,instagram,tiktok,facebook,primary_source_url
+SAMPLE-001,Salon Melati Sample,Hair Salon,"Jl. Sudirman No. 10",Jakarta,DKI Jakarta,-6.2146,106.8451,+628120001001,+628120001001,https://example.com/melati,,https://instagram.com/sample_melati,,,https://directory.example/sample-001
+SAMPLE-002,Studio Rambut Nusantara Sample,Salon Rambut,"Jl. Diponegoro No. 21",Surabaya,East Java,-7.2700,112.7400,+628120001002,,https://example.com/nusantara,https://booking.example/nusantara,,,https://facebook.com/sample.nusantara,https://booking.example/record/sample-002
+SAMPLE-003,Bali Beauty Room Sample,Beauty Salon,"Jl. Teuku Umar No. 8",Denpasar,Bali,-8.6700,115.2100,,+628120001003,,,https://instagram.com/bali_beauty_sample,https://tiktok.com/@bali_beauty_sample,,https://social.example/record/sample-003

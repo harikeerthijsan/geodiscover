@@ -1,0 +1,64 @@
+JSAN GEODISCOVER™ — EXECUTIVE CUSTOMER DEMO v5.0
+=================================================
+
+PURPOSE
+-------
+This package tells one simple customer story:
+
+1. Compare authorised HERE, Google and Grab POI extracts.
+2. Show confirmed matches and evidence-backed candidate tiers.
+3. Prioritise a Strong 10/25 validation sample.
+4. Explain real coordinates, evidence and cost controls.
+5. Block customer release until enrichment and independent QA are complete.
+
+FIRST-TIME WINDOWS SETUP
+------------------------
+1. Extract the ZIP to a simple folder, for example:
+   C:\JSAN\GeoDiscover_Executive_Demo_v5
+
+2. Double-click:
+   START_GEODISCOVER_WINDOWS.bat
+
+3. On the first run, Notepad opens backend\.env.
+   Set a long JWT_SECRET and a new DEMO_ADMIN_PASSWORD.
+   Save and close Notepad.
+
+4. Run START_GEODISCOVER_WINDOWS.bat again.
+
+5. The browser opens:
+   http://localhost:8000
+
+6. Sign in with DEMO_ADMIN_EMAIL and DEMO_ADMIN_PASSWORD from backend\.env.
+
+THREE-MAP AREA COMPARISON
+-------------------------
+Open http://localhost:8000/engine/ and choose "Area Comparison" to draw a
+radius on the HERE map and compare HERE, Google and Grab across every POI
+category inside it.
+
+CUSTOMER DEMO ORDER
+-------------------
+1. Executive Overview
+2. Comparison Proof
+3. Priority Sample
+4. Coverage Map
+5. Cost & Scale
+6. Customer Pack
+
+Keep “Future Scale” until the end and only discuss it after the current sample is understood.
+
+CUSTOMER-SAFE STATEMENT
+-----------------------
+“JSAN compared 400 Grab POIs with 562 Google POIs in a controlled Denpasar CORE benchmark, identified 53 matched pairs and created a priority queue of 39 direct-probe candidates for enrichment, complete Google exclusion and independent QA.”
+
+DO NOT STATE
+------------
+“JSAN has already confirmed 178 active POIs absent from Google.”
+
+CUSTOMER WORKBOOK
+-----------------
+sample_output\GeoDiscover_Executive_Customer_Sample_v5.xlsx
+
+STOP THE APPLICATION
+--------------------
+Return to the command window and press Ctrl+C.
